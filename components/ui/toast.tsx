@@ -1,9 +1,9 @@
 'use client';
 
-import * as React from 'react';
 import * as ToastPrimitives from '@radix-ui/react-toast';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { type VariantProps, cva } from 'class-variance-authority';
 import { X } from 'lucide-react';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -32,8 +32,6 @@ const toastVariants = cva(
         default: 'border bg-background text-foreground',
         destructive:
           'destructive group border-destructive bg-destructive text-destructive-foreground',
-        success:
-          'success group border-success bg-success text-success-foreground',
       },
     },
     defaultVariants: {

@@ -206,7 +206,6 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
     if (heuristic === selected?.problem.answer) {
       toast({
         title: 'Correct answer!',
-        variant: 'success',
       });
       setPoints(points + 1);
       // save user answer
