@@ -166,7 +166,8 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
 
     if (alreadyAnswered.size === allProblems.length) {
       alreadyAnswered.clear();
-      router.push('/results');
+      router.push(`/results?points=${points}`);
+      setPoints(0);
       return;
     }
 

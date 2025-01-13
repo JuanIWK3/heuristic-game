@@ -2,10 +2,14 @@
 
 import { Button } from '@/components/ui/button';
 import { gameContext } from '@/context/game';
+import { useSearchParams } from 'next/navigation';
 import { use } from 'react';
 
 export default function ResultsPage() {
-  const { points, sites } = use(gameContext);
+  const { sites } = use(gameContext);
+  // get points from url query
+  const params = useSearchParams();
+  const points = Number(params.get('points'));
 
   return (
     <div className="min-h-screen gap-8 p-8 flex flex-col items-center justify-center">
