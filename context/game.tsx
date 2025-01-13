@@ -1,59 +1,43 @@
-"use client";
+'use client';
 
-import { createContext, type Dispatch, type SetStateAction } from "react";
-
-export type Heuristic =
-	| "visibility"
-	| "match"
-	| "userControl"
-	| "consistency"
-	| "errorPrevention"
-	| "recognition"
-	| "flexibility"
-	| "aesthetic"
-	| "help"
-	| "documentation";
-
-export const heuristics = {
-	visibility: "Visibility of System Status",
-	match: "Match between system and the real world",
-	userControl: "User control and freedom",
-	consistency: "Consistency and standards",
-	errorPrevention: "Error prevention",
-	recognition: "Recognition rather than recall",
-	flexibility: "Flexibility and efficiency of use",
-	aesthetic: "Aesthetic and minimalist design",
-	help: "Help users recognize, diagnose, and recover from errors",
-	documentation: "Help and documentation",
-};
+import type { Heuristic } from '@/data/heuristics';
+import { createContext, type Dispatch, type SetStateAction } from 'react';
 
 export type Problem = {
-	image: string;
-	answer: Heuristic;
-	description: string;
+  image: string;
+  answer: Heuristic;
+  description: string;
+  userAnswer?: Heuristic;
 };
 
 export type Site = {
-	name: string;
-	problems: Problem[];
+  name: string;
+  problems: Problem[];
 };
 
 type UserContext = {
-	points: number;
-	setPoints: Dispatch<SetStateAction<number>>;
-	sites: Site[];
-	selectedSite: string | null;
-	selectRandomSite: VoidFunction;
+  points: number;
+  setPoints: Dispatch<SetStateAction<number>>;
+  sites: Site[];
+  selected: {
+    site: Site;
+    problem: Problem;
+  } | null;
+  selectRandom: VoidFunction;
+  answer(heuristic: Heuristic): void;
 };
 
 export const gameContext = createContext<UserContext>({
-	points: 0,
-	setPoints: () => {
-		/* default implementation */
-	},
-	sites: [],
-	selectedSite: "",
-	selectRandomSite: () => {
-		/* default implementation */
-	},
+  points: 0,
+  setPoints: () => {
+    /* default implementation */
+  },
+  sites: [],
+  selected: null,
+  selectRandom: () => {
+    /* default implementation */
+  },
+  answer() {
+    /* default implementation */
+  },
 });
