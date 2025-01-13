@@ -28,7 +28,7 @@ export function ProblemDialog({
 
   useEffect(() => {
     if (timer === 0) {
-      answer('none');
+      answer(null);
       setOpen(false);
     }
   }, [timer, answer]);
