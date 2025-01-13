@@ -10,7 +10,7 @@ import { gameContext, type Problem } from '@/context/game';
 import { type Heuristic, heuristics } from '@/data/heuristics';
 import Image from 'next/image';
 import { Button } from './ui/button';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 export function ProblemDialog({
   problem,
@@ -18,12 +18,34 @@ export function ProblemDialog({
 }: { problem: Problem; name: string }) {
   const { answer } = useContext(gameContext);
   const [open, setOpen] = useState<boolean>(false);
+  const [timer, setTimer] = useState<number>(5);
+
+  setTimeout(() => {
+    if (timer > 0 && open) {
+      setTimer(timer - 1);
+    }
+  }, 1000);
+
+  useEffect(() => {
+    if (timer === 0) {
+      answer('none');
+      setOpen(false);
+    }
+  }, [timer, answer]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger>{name}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
+          {timer > 0 && (
+            <div className="text-center text-2xl">
+              {timer}
+              <br />
+              seconds
+            </div>
+          )}
+
           <DialogTitle>What is the heuristic for this problem?</DialogTitle>
           <DialogDescription>{problem.description}</DialogDescription>
           <Image

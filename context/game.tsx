@@ -7,7 +7,7 @@ export type Problem = {
   image: string;
   answer: Heuristic;
   description: string;
-  userAnswer?: Heuristic;
+  userAnswer?: Heuristic | null;
 };
 
 export type Site = {
@@ -24,7 +24,7 @@ type UserContext = {
     problem: Problem;
   } | null;
   selectRandom: VoidFunction;
-  answer(heuristic: Heuristic): void;
+  answer(heuristic: Heuristic | null): void;
 };
 
 export const gameContext = createContext<UserContext>({

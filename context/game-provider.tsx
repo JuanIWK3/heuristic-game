@@ -8,7 +8,7 @@ import type { Heuristic } from '@/data/heuristics';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
   const [points, setPoints] = useState<number>(0);
-  const sites: Site[] = [
+  const [sites, setSites] = useState<Site[]>([
     {
       name: 'Google',
       problems: [
@@ -147,15 +147,13 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
     //     },
     //   ],
     // },
-  ];
+  ]);
   const [selected, setSelected] = useState<{
     site: Site;
     problem: Problem;
   } | null>(null);
   const router = useRouter();
-  const [alreadyAnswered, setAlreadyAnswered] = useState<Set<Problem>>(
-    new Set(),
-  );
+  const [alreadyAnswered] = useState<Set<Problem>>(new Set());
 
   console.log('Game context provider');
 
@@ -191,12 +189,19 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
     });
   }
 
-  function answer(heuristic: Heuristic) {
+  function answer(heuristic: Heuristic | null) {
     if (!selected) {
       return;
     }
     console.log(`Answering ${heuristic} for ${selected.problem.answer}`);
     alreadyAnswered.add(selected.problem);
+
+    if (!heuristic) {
+      toast({
+        title: 'Time is up!',
+        variant: 'destructive',
+      });
+    }
 
     if (heuristic === selected?.problem.answer) {
       toast({
@@ -204,12 +209,33 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
         variant: 'success',
       });
       setPoints(points + 1);
+      // save user answer
     } else {
       toast({
         title: 'Incorrect answer.',
         variant: 'destructive',
       });
     }
+
+    setSites((sites) =>
+      sites.map((site) => {
+        if (site.name === selected.site.name) {
+          return {
+            ...site,
+            problems: site.problems.map((problem) => {
+              if (problem === selected.problem) {
+                return {
+                  ...problem,
+                  userAnswer: heuristic,
+                };
+              }
+              return problem;
+            }),
+          };
+        }
+        return site;
+      }),
+    );
 
     setSelected(null);
   }
