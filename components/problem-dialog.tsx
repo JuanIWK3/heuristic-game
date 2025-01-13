@@ -6,72 +6,125 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
 import { gameContext, type Problem } from '@/context/game';
 import { type Heuristic, heuristics } from '@/data/heuristics';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { useContext, useEffect, useState } from 'react';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 export function ProblemDialog({
   problem,
   name,
-}: { problem: Problem; name: string }) {
+}: {
+  problem: Problem;
+  name: string;
+}) {
   const { answer } = useContext(gameContext);
   const [open, setOpen] = useState<boolean>(false);
-  const [timer, setTimer] = useState<number>(5);
-
-  setTimeout(() => {
-    if (timer > 0 && open) {
-      setTimer(timer - 1);
-    }
-  }, 1000);
+  const [timer, setTimer] = useState<number>(500);
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
-    if (timer === 0) {
-      answer(null);
-      setOpen(false);
-    }
-  }, [timer, answer]);
+    if (!open) return;
+
+    const interval = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 0) {
+          answer(null);
+          setOpen(false);
+          clearInterval(interval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [open, answer]);
+
+  const renderContent = () => (
+    <div>
+      {timer > 0 && (
+        <div className="text-center text-2xl">
+          {timer}
+          <br />
+          seconds
+        </div>
+      )}
+      <div>
+        <DialogTitle>What is the heuristic for this problem?</DialogTitle>
+        <DialogDescription>{problem.description}</DialogDescription>
+        <Image
+          src="https://picsum.photos/600/400"
+          width={200}
+          height={200}
+          alt="Warning"
+          className="w-full p-4"
+        />
+
+        <Select
+          onValueChange={(key) => {
+            answer(key as Heuristic);
+            setOpen(false);
+          }}
+        >
+          <SelectTrigger>
+            <SelectValue placeholder="Select a Heuristic" />
+          </SelectTrigger>
+          <SelectContent>
+            {Object.entries(heuristics).map(([key, value]) => (
+              <SelectItem key={key} value={key}>
+                {value}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+    </div>
+  );
+
+  if (isDesktop) {
+    return (
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger>{name}</DialogTrigger>
+        <DialogContent className="">
+          <DialogHeader>{renderContent()}</DialogHeader>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger>{name}</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          {timer > 0 && (
-            <div className="text-center text-2xl">
-              {timer}
-              <br />
-              seconds
-            </div>
-          )}
-
-          <DialogTitle>What is the heuristic for this problem?</DialogTitle>
-          <DialogDescription>{problem.description}</DialogDescription>
-          <Image
-            src="https://picsum.photos/600/400"
-            width={600}
-            height={400}
-            alt="Warning"
-          />
-          <div className="flex gap-2 flex-wrap">
-            {Object.entries(heuristics).map(([key, value]) => (
-              <Button
-                key={key}
-                variant={'outline'}
-                onClick={() => {
-                  answer(key as Heuristic);
-
-                  setOpen(false);
-                }}
-                className="border p-2 rounded"
-              >
-                {value}
-              </Button>
-            ))}
-          </div>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
+    <Drawer open={open} onOpenChange={setOpen}>
+      <DrawerTrigger>{name}</DrawerTrigger>
+      <DrawerContent className="">
+        <DrawerHeader>{renderContent()}</DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose asChild>
+            <Button variant="outline">Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 }

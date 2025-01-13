@@ -5,7 +5,8 @@ import { gameContext } from '@/context/game';
 import { use, useEffect } from 'react';
 
 export default function Home() {
-  const { points, sites, selectRandom, selected } = use(gameContext);
+  const { points, sites, selectRandom, selected, alreadyAnswered } =
+    use(gameContext);
 
   useEffect(() => {
     if (!selected) {
@@ -16,13 +17,14 @@ export default function Home() {
   }, [selected, selectRandom]);
 
   return (
-    <div className="flex p-8 flex-col items-center justify-items-center min-h-screen w-full">
-      <div className="flex justify-between w-full">
+    <div className="flex p-8 flex-col items-center justify-center min-h-screen w-full">
+      <div className="flex flex-col justify-between w-full items-center">
         <h1 className="font-bold">Heuristic Finder Game</h1>
         <p>Points: {points}</p>
+        <p>Answererd: {alreadyAnswered}/18</p>
       </div>
 
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap items-center justify-center">
         {sites.map((site) => (
           <div key={site.name}>
             <h2

@@ -25,6 +25,7 @@ type UserContext = {
   } | null;
   selectRandom: VoidFunction;
   answer(heuristic: Heuristic | null): void;
+  alreadyAnswered: number;
 };
 
 export const gameContext = createContext<UserContext>({
@@ -40,4 +41,5 @@ export const gameContext = createContext<UserContext>({
   answer() {
     /* default implementation */
   },
+  alreadyAnswered: 0,
 });

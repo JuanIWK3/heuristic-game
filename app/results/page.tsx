@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/ui/button';
 import { gameContext } from '@/context/game';
+import { MoveLeft } from 'lucide-react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { use } from 'react';
 
@@ -13,6 +15,11 @@ export default function ResultsPage() {
 
   return (
     <div className="min-h-screen gap-8 p-8 flex flex-col items-center justify-center">
+      <Link href="/">
+        <Button variant={'outline'} className="text-blue-500">
+          <MoveLeft /> Play again
+        </Button>
+      </Link>
       <h1 className="font-bold text-2xl">Results</h1>
       <p>
         You scored <Button variant={'outline'}>{points}</Button> points
