@@ -129,24 +129,24 @@ export const sites: Site[] = [
     ],
   },
   {
-    name: 'Twitter',
+    name: 'Farmacias Araujo',
     problems: [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The character counter is not prominently visible when composing a tweet, reducing visibility of system status.',
+          'O site não informa claramente se um medicamento está em falta até o momento do checkout.',
         answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'User options for muting or blocking accounts are buried in submenus, reducing flexibility and efficiency.',
-        answer: 'flexibility',
+          'The names of some products appear abbreviated, making it difficult to fully identify the item without clicking on it.',
+        answer: 'match',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Error messages during login do not guide users clearly to resolve the issue.',
+          'The search functionality does not accept common typos or drug name variations.',
         answer: 'help',
       },
     ],
