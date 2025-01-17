@@ -5,8 +5,8 @@ import type { Problem, Site } from '@/data/sites';
 import { type Dispatch, type SetStateAction, createContext } from 'react';
 
 type UserContext = {
-  points: number;
-  setPoints: Dispatch<SetStateAction<number>>;
+  score: number;
+  setScore: Dispatch<SetStateAction<number>>;
   sites: Site[];
   selected: {
     site: Site;
@@ -18,8 +18,8 @@ type UserContext = {
 };
 
 export const gameContext = createContext<UserContext>({
-  points: 0,
-  setPoints: () => {
+  score: 0,
+  setScore: () => {
     /* default implementation */
   },
   sites: [],

@@ -6,7 +6,7 @@ import { gameContext } from '@/context/game';
 import { use, useEffect } from 'react';
 
 export default function Home() {
-  const { points, sites, selectRandom, selected, alreadyAnswered } =
+  const { score, sites, selectRandom, selected, alreadyAnswered } =
     use(gameContext);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center">
-          <p>Points: {points}</p>
+          <p>Score: {score}</p>
           <p>Answered: {alreadyAnswered}/18</p>
         </div>
       </div>

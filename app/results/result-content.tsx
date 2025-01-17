@@ -8,7 +8,7 @@ import { use } from 'react';
 export function ResultsContent() {
   const { sites } = use(gameContext);
   const params = useSearchParams();
-  const points = Number(params.get('points'));
+  const score = Number(params.get('score'));
 
   const problems = sites.flatMap((site) => site.problems);
 
@@ -21,7 +21,7 @@ export function ResultsContent() {
       </Link>
       <h1 className="font-bold text-2xl">Results</h1>
       <p>
-        You scored <Button variant={'outline'}>{points}</Button> points
+        You scored <Button variant={'outline'}>{score}</Button> score
       </p>
       <h1 className="text-center font-bold mb-4">Answers</h1>
       <div className="flex flex-wrap justify-center gap-4">

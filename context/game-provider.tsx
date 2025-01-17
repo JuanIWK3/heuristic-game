@@ -9,7 +9,7 @@ import { gameContext } from './game';
 import { sites as data } from '@/data/sites';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
-  const [points, setPoints] = useState<number>(0);
+  const [score, setScore] = useState<number>(0);
   const [sites, setSites] = useState<Site[]>(data);
   const [selected, setSelected] = useState<{
     site: Site;
@@ -29,8 +29,8 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
 
     if (alreadyAnswered.size === allProblems.length) {
       alreadyAnswered.clear();
-      router.push(`/results?points=${points}`);
-      setPoints(0);
+      router.push(`/results?score=${score}`);
+      setScore(0);
       return;
     }
 
@@ -71,7 +71,7 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
       toast({
         title: 'Correct answer!',
       });
-      setPoints(points + 1);
+      setScore(score + 1);
       // save user answer
     } else {
       toast({
@@ -106,8 +106,8 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
   return (
     <gameContext.Provider
       value={{
-        points,
-        setPoints,
+        score,
+        setScore,
         sites,
         selectRandom,
         selected,
