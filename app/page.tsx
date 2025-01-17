@@ -1,6 +1,6 @@
 'use client';
 
-import { ProblemDialog } from '@/components/problem-dialog';
+import { ProblemCard } from '@/components/problem-card';
 import { gameContext } from '@/context/game';
 import { use, useEffect } from 'react';
 
@@ -24,17 +24,7 @@ export default function Home() {
 
       <div className="flex gap-4 flex-wrap items-center justify-center">
         {sites.map((site) => (
-          <div key={site.name}>
-            <h2
-              className={`font-bold flex my-2 border p-4 rounded ${selected?.site.name === site.name ? 'text-red-500' : ''}`}
-            >
-              {selected && selected.site.name === site.name ? (
-                <ProblemDialog problem={selected?.problem} name={site.name} />
-              ) : (
-                site.name
-              )}
-            </h2>
-          </div>
+          <ProblemCard key={site.name} site={site} selected={selected} />
         ))}
       </div>
       <div className="text-center">
