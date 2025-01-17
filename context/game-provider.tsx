@@ -1,10 +1,11 @@
 'use client';
 
 import type { Heuristic } from '@/data/heuristics';
+import type { Problem, Site } from '@/data/sites';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { type ReactNode, useState } from 'react';
-import { type Problem, type Site, gameContext } from './game';
+import { gameContext } from './game';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
   const [points, setPoints] = useState<number>(0);
