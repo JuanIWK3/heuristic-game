@@ -60,25 +60,25 @@ export const sites: Site[] = [
     ],
   },
   {
-    name: 'YouTube',
+    name: 'iFood',
     problems: [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The autoplay feature is not easily visible to users, leading to confusion when videos play automatically.',
+          'When choosing a restaurant, the user cannot see delivery fees before adding something to the cart.',
         answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Video categories sometimes mix unrelated content, making it hard for users to find what they’re looking for.',
-        answer: 'consistency',
+          'The 'Cancel order' option is inaccessible after payment confirmation, even before the order is prepared',
+        answer: 'usercontrol',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The settings menu uses jargon unfamiliar to average users, reducing ease of understanding.',
-        answer: 'match',
+          'Generic error messages appear when payment fails, without detailing the reason.',
+        answer: 'errorPrevention',
       },
     ],
   },
@@ -111,14 +111,14 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The 'Continue Watching' section doesn’t allow users to easily remove items, reducing user control.",
-        answer: 'userControl',
+          "After pausing a video, the subtitle disappears on the pause screen.",
+        answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Titles in non-native languages often don’t have translated descriptions, mismatching user expectations.',
-        answer: 'match',
+          'The recommendations algorithm prioritizes popular content over the user's favorite genres.',
+        answer: 'consistency',
       },
       {
         image: 'https://via.placeholder.com/150',
