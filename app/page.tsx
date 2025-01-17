@@ -17,11 +17,9 @@ export default function Home() {
   }, [selected, selectRandom]);
 
   return (
-    <div className="flex p-8 flex-col items-center justify-center min-h-screen w-full">
+    <div className="flex p-8 flex-col items-center justify-between min-h-screen w-full">
       <div className="flex flex-col justify-between w-full items-center">
-        <h1 className="font-bold">Heuristic Finder Game</h1>
-        <p>Points: {points}</p>
-        <p>Answererd: {alreadyAnswered}/18</p>
+        <h1 className="font-bold text-3xl">Heuristic Finder Game</h1>
       </div>
 
       <div className="flex gap-4 flex-wrap items-center justify-center">
@@ -38,6 +36,10 @@ export default function Home() {
             </h2>
           </div>
         ))}
+      </div>
+      <div className="text-center">
+        <p>Points: {points}</p>
+        <p>Answered: {alreadyAnswered}/18</p>
       </div>
     </div>
   );
