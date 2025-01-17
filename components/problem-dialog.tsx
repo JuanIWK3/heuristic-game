@@ -21,8 +21,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { type Problem, gameContext } from '@/context/game';
+import { gameContext } from '@/context/game';
 import { type Heuristic, heuristics } from '@/data/heuristics';
+import type { Problem } from '@/data/sites';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
@@ -41,7 +42,9 @@ export function ProblemDialog({
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
-    if (!open) return;
+    if (!open) {
+      return;
+    }
 
     const interval = setInterval(() => {
       setTimer((prev) => {
