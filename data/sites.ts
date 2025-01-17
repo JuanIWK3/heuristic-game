@@ -25,14 +25,14 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The promotions layout does not display old prices for comparison with discounts.,
-           answer:'match'
+          'The promotions layout does not display old prices for comparison with discounts.',
+        answer: 'match',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
           "The 'Back' button takes the user to the home page instead of the previous page.",
-        answer: 'usercontrol',
+        answer: 'userControl',
       },
     ],
   },
@@ -71,8 +71,8 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The 'Cancel order' option is inaccessible after payment confirmation, even before the order is prepared',
-        answer: 'usercontrol',
+          "The 'Cancel order' option is inaccessible after payment confirmation, even before the order is prepared",
+        answer: 'userControl',
       },
       {
         image: 'https://via.placeholder.com/150',
@@ -111,13 +111,13 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "After pausing a video, the subtitle disappears on the pause screen.",
+          'After pausing a video, the subtitle disappears on the pause screen.',
         answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The recommendations algorithm prioritizes popular content over the user's favorite genres.',
+          "The recommendations algorithm prioritizes popular content over the user's favorite genres.",
         answer: 'consistency',
       },
       {
