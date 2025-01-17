@@ -14,7 +14,7 @@ export type Site = {
 
 export const sites: Site[] = [
   {
-    name: 'Google',
+    name: 'Supermecados Bh',
     problems: [
       {
         image: 'https://via.placeholder.com/150',
