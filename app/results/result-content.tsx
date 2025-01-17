@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { gameContext } from '@/context/game';
-import { Link, MoveLeft } from 'lucide-react';
+import { MoveLeft } from 'lucide-react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { use } from 'react';
 
@@ -20,7 +21,6 @@ export function ResultsContent() {
       <p>
         You scored <Button variant={'outline'}>{points}</Button> points
       </p>
-
       <div className="w-full max-w-sm">
         <h1 className="text-center font-bold mb-4">Answers</h1>
         <ul>

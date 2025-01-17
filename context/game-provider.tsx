@@ -6,10 +6,11 @@ import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { type ReactNode, useState } from 'react';
 import { gameContext } from './game';
+import { sites as data } from '@/data/sites';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
   const [points, setPoints] = useState<number>(0);
-  const [sites, setSites] = useState<Site[]>([]);
+  const [sites, setSites] = useState<Site[]>(data);
   const [selected, setSelected] = useState<{
     site: Site;
     problem: Problem;
