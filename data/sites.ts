@@ -19,20 +19,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The Google search website doesn’t provide clear documentation on how to use shortcuts like quotes for precise searches.',
-        answer: 'documentation',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          "When searching for common errors, Google doesn't differentiate between developer-oriented and user-oriented solutions, causing confusion.",
-        answer: 'match',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          "The search bar suggestions aren't visible immediately after typing a query, making the system status unclear.",
+          'The application does not notify you when an item added to the cart is out of stock.',
         answer: 'visibility',
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          "The promotions layout does not display old prices for comparison with discounts.,
+           answer:'match'
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          "The 'Back' button takes the user to the home page instead of the previous page.",
+        answer: 'usercontrol',
       },
     ],
   },
