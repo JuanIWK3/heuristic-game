@@ -21,14 +21,14 @@ export function ResultsContent() {
       <p>
         You scored <Button variant={'outline'}>{points}</Button> points
       </p>
-      <div className="w-full max-w-sm">
+      <div className="w-full">
         <h1 className="text-center font-bold mb-4">Answers</h1>
         <ul>
           {sites.map((site) => (
-            <div className="flex flex-col gap-4" key={site.name}>
+            <div className="flex w-full gap-2" key={site.name}>
               {site.problems.map((problem) => (
                 <div
-                  className={`flex border flex-col gap-4 w-full p-4 rounded ${
+                  className={`flex my-4 justify-between border flex-col gap-4 w-full p-4 rounded ${
                     problem.userAnswer === problem.answer
                       ? 'border-green-500'
                       : 'border-red-500'
@@ -36,17 +36,15 @@ export function ResultsContent() {
                   key={problem.description}
                 >
                   <h2>{problem.description}</h2>
-                  <div className="flex justify-between w-full">
-                    <p>Yours</p>
-                    <p>Correct</p>
-                  </div>
-                  <div className="flex justify-between w-full">
+                  <div className="border p-2 rounded">
                     <p>
                       {problem.userAnswer
                         ? problem.userAnswer
                         : 'You did not answer'}
                     </p>
-                    <h2>{problem.answer}</h2>
+                    <h2>
+                      Correct: <b className="font-bold">{problem.answer}</b>
+                    </h2>
                   </div>
                 </div>
               ))}
