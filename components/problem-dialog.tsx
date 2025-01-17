@@ -10,27 +10,23 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { gameContext, type Problem } from '@/context/game';
-import { type Heuristic, heuristics } from '@/data/heuristics';
-import Image from 'next/image';
-import { Button } from './ui/button';
-import { useContext, useEffect, useState } from 'react';
-import { useMediaQuery } from '@/hooks/use-media-query';
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { type Problem, gameContext } from '@/context/game';
+import { type Heuristic, heuristics } from '@/data/heuristics';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import Image from 'next/image';
+import { useContext, useEffect, useState } from 'react';
+import { Button } from './ui/button';
 
 export function ProblemDialog({
   problem,

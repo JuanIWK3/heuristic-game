@@ -1,19 +1,8 @@
 'use client';
 
 import type { Heuristic } from '@/data/heuristics';
-import { createContext, type Dispatch, type SetStateAction } from 'react';
-
-export type Problem = {
-  image: string;
-  answer: Heuristic;
-  description: string;
-  userAnswer?: Heuristic | null;
-};
-
-export type Site = {
-  name: string;
-  problems: Problem[];
-};
+import type { Problem, Site } from '@/data/sites';
+import { type Dispatch, type SetStateAction, createContext } from 'react';
 
 type UserContext = {
   points: number;
