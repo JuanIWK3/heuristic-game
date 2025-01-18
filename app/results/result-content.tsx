@@ -21,7 +21,7 @@ export function ResultsContent() {
       </Link>
       <h1 className="font-bold text-2xl">Results</h1>
       <p>
-        You scored <Button variant={'outline'}>{score}</Button> score
+        You scored <Button>{score}</Button>
       </p>
       <h1 className="text-center font-bold mb-4">Answers</h1>
       <div className="flex flex-wrap justify-center gap-4">

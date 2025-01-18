@@ -46,20 +46,18 @@ export function ProblemDialog({
       return;
     }
 
+    if (timer <= 0) {
+      answer(null);
+      setOpen(false);
+      return;
+    }
+
     const interval = setInterval(() => {
-      setTimer((prev) => {
-        if (prev <= 0) {
-          answer(null);
-          setOpen(false);
-          clearInterval(interval);
-          return 0;
-        }
-        return prev - 1;
-      });
+      setTimer((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [open, answer]);
+  }, [open, answer, timer]);
 
   const renderContent = () => (
     <div>
