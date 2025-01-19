@@ -38,7 +38,7 @@ export function ProblemDialog({
 }) {
   const { answer } = useContext(gameContext);
   const [open, setOpen] = useState<boolean>(false);
-  const [timer, setTimer] = useState<number>(500);
+  const [timer, setTimer] = useState<number>(60);
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
@@ -102,10 +102,22 @@ export function ProblemDialog({
     </div>
   );
 
+  const trigger = () => {
+    return (
+      <h2
+        className={
+          'hover:bg-red-100 border-red- hover:border-red-500 transition-all font-bold bg-white text-red-500 animate-bounce flex my-2 border p-4 rounded'
+        }
+      >
+        {name}
+      </h2>
+    );
+  };
+
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger>{name}</DialogTrigger>
+        <DialogTrigger>{trigger()}</DialogTrigger>
         <DialogContent className="">
           <DialogHeader>{renderContent()}</DialogHeader>
         </DialogContent>
@@ -115,7 +127,7 @@ export function ProblemDialog({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger>{name}</DrawerTrigger>
+      <DrawerTrigger>{trigger()}</DrawerTrigger>
       <DrawerContent className="">
         <DrawerHeader>{renderContent()}</DrawerHeader>
         <DrawerFooter>
