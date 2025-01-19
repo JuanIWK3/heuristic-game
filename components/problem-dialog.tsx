@@ -106,7 +106,7 @@ export function ProblemDialog({
     return (
       <h2
         className={
-          'hover:bg-red-100 border-red- hover:border-red-500 transition-all font-bold bg-white text-red-500 animate-bounce flex my-2 border p-4 rounded'
+          'border-red-500 hover:bg-red-100 border-red- hover:border-red-500 transition-all font-bold bg-white text-red-500 animate-bounce flex my-2 border p-4 rounded'
         }
       >
         {name}
