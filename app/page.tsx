@@ -17,7 +17,7 @@ export default function Home() {
   }, [selected, selectRandom]);
 
   return (
-    <div className="flex blur-none relative p-8 flex-col items-center justify-between min-h-screen w-full">
+    <div className="flex p-8 flex-col items-center justify-between min-h-screen w-full">
       <div className="flex flex-col justify-between w-full items-center">
         <h1 className="font-bold text-3xl">Heuristic Finder Game</h1>
       </div>
