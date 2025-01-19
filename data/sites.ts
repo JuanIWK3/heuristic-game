@@ -151,4 +151,4 @@ export const sites: Site[] = [
       },
     ],
   },
-];
+].slice(0, 1) as Site[];

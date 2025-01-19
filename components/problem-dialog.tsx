@@ -38,7 +38,7 @@ export function ProblemDialog({
 }) {
   const { answer } = useContext(gameContext);
   const [open, setOpen] = useState<boolean>(false);
-  const [timer, setTimer] = useState<number>(60);
+  const [timer, setTimer] = useState<number>(5);
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {

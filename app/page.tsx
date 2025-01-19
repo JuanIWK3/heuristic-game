@@ -1,5 +1,6 @@
 'use client';
 
+import { Footer } from '@/components/footer';
 import { ProblemCard } from '@/components/problem-card';
 import { gameContext } from '@/context/game';
 import { use, useEffect } from 'react';
@@ -27,10 +28,7 @@ export default function Home() {
           <ProblemCard key={site.name} site={site} selected={selected} />
         ))}
       </div>
-      <div className="text-center">
-        <p>Score: {score}</p>
-        <p>Answered: {alreadyAnswered}/18</p>
-      </div>
+      <Footer />
     </div>
   );
 }
