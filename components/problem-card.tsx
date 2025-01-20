@@ -1,5 +1,6 @@
 import type { Problem, Site } from '@/data/sites';
 import { ProblemDialog } from './problem-dialog';
+import { Button } from './ui/button';
 
 export function ProblemCard({
   site,
@@ -13,9 +14,9 @@ export function ProblemCard({
       {selected && selected.site.name === site.name ? (
         <ProblemDialog problem={selected?.problem} name={site.name} />
       ) : (
-        <h2 className={'font-bold bg-white flex my-2 border p-4 rounded'}>
+        <Button className={''} variant={'secondary'}>
           {site.name}
-        </h2>
+        </Button>
       )}
     </div>
   );

@@ -102,13 +102,13 @@ export function ProblemDialog({
 
   const trigger = () => {
     return (
-      <h2
+      <div
         className={
-          'border-red-500 hover:bg-red-100 border-red- hover:border-red-500 transition-all font-bold bg-white text-red-500 animate-bounce flex my-2 border p-4 rounded'
+          'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 animate-bounce border-red-400 border h-9 px-4 py-2 hover:bg-red-900'
         }
       >
         {name}
-      </h2>
+      </div>
     );
   };
 

@@ -3,6 +3,7 @@ import { GameContextProvider } from '@/context/game-provider';
 import type { Metadata } from 'next';
 import type React from 'react';
 import './globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Heuristic Finder',
@@ -15,12 +16,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <GameContextProvider>
-          {children}
-          <Toaster />
-        </GameContextProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <GameContextProvider>
+            {children}
+            <Toaster />
+          </GameContextProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
