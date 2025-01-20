@@ -106,24 +106,24 @@ export const sites: Site[] = [
     ],
   },
   {
-    name: 'Netflix',
+    name: 'Open English',
     problems: [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'A reprodução automática de trailers na tela inicial pode ser considerada invasiva por alguns usuários.',
-        answer: 'usercontrol',
+          'The page has spelling errors.',
+        answer: 'consistency',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "Content categorization does not always accurately reflect users' genres or preferences.",
-        answer: 'match',
+          "There is no clear information about the duration of classes or modules on the website.",
+        answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The option to skip series introductions is not always available or visible.',
+          'The platform does not provide a free trial or demonstration option for classes.',
         answer: 'flexibility',
       },
     ],
