@@ -69,9 +69,7 @@ export function ProblemDialog({
         </div>
       )}
       <div className="overflow-scroll">
-        <DialogTitle>
-          {site.name}: What is the heuristic for this problem?
-        </DialogTitle>
+        <DialogTitle className="mb-4">{site.name}</DialogTitle>
         <DialogDescription>{problem.description}</DialogDescription>
         <Image
           src={problem.image}
@@ -123,7 +121,7 @@ export function ProblemDialog({
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger>{trigger()}</DialogTrigger>
-        <DialogContent className="overflow-scroll">
+        <DialogContent className="overflow-scroll max-h-screen">
           <DialogHeader>{renderContent()}</DialogHeader>
         </DialogContent>
       </Dialog>
