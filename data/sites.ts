@@ -147,7 +147,6 @@ export const sites: Site[] = [
         image: 'https://via.placeholder.com/150',
         description:
           'The platform does not provide a free trial or demonstration option for classes.',
-          'The platform does not provide a free trial or demonstration option for classes.',
         answer: 'flexibility',
       },
     ],
