@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/select';
 import { gameContext } from '@/context/game';
 import { type Heuristic, heuristics } from '@/data/heuristics';
-import type { Problem } from '@/data/sites';
+import type { Problem, Site } from '@/data/sites';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import Image from 'next/image';
 import { useContext, useEffect, useState } from 'react';
@@ -31,10 +31,10 @@ import { Button } from './ui/button';
 
 export function ProblemDialog({
   problem,
-  name,
+  site,
 }: {
   problem: Problem;
-  name: string;
+  site: Site;
 }) {
   const { answer } = useContext(gameContext);
   const [open, setOpen] = useState<boolean>(false);
@@ -60,7 +60,7 @@ export function ProblemDialog({
   }, [open, answer, timer]);
 
   const renderContent = () => (
-    <div>
+    <div className="overflow-scroll">
       {timer > 0 && (
         <div className="text-center text-2xl">
           {timer}
@@ -68,15 +68,17 @@ export function ProblemDialog({
           seconds
         </div>
       )}
-      <div>
-        <DialogTitle>What is the heuristic for this problem?</DialogTitle>
+      <div className="overflow-scroll">
+        <DialogTitle>
+          {site.name}: What is the heuristic for this problem?
+        </DialogTitle>
         <DialogDescription>{problem.description}</DialogDescription>
         <Image
-          src="https://picsum.photos/600/400"
+          src={problem.image}
           width={200}
           height={200}
           alt="Warning"
-          className="w-full p-4"
+          className="w-full p-4 rounded-lg"
         />
 
         <Select
@@ -104,10 +106,15 @@ export function ProblemDialog({
     return (
       <div
         className={
-          'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 animate-bounce border-red-400 border h-9 px-4 py-2 hover:bg-red-900'
+          'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 animate-bounce border-red-400 border px-4 py-2 hover:shadow-xl'
         }
       >
-        {name}
+        <Image
+          src={site.logo ?? 'https://picsum.photos/50'}
+          alt="logo"
+          height={50}
+          width={50}
+        />
       </div>
     );
   };
@@ -116,7 +123,7 @@ export function ProblemDialog({
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger>{trigger()}</DialogTrigger>
-        <DialogContent className="">
+        <DialogContent className="overflow-scroll">
           <DialogHeader>{renderContent()}</DialogHeader>
         </DialogContent>
       </Dialog>
