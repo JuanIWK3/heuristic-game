@@ -39,7 +39,5 @@
 		"eslint-config-next": "15.1.4",
 		"@eslint/eslintrc": "^3"
 	},
-	"trustedDependencies": [
-		"@biomejs/biome"
-	]
+	"trustedDependencies": ["@biomejs/biome"]
 }

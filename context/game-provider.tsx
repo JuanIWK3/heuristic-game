@@ -2,11 +2,11 @@
 
 import type { Heuristic } from '@/data/heuristics';
 import type { Problem, Site } from '@/data/sites';
+import { sites as data } from '@/data/sites';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
 import { type ReactNode, useState } from 'react';
 import { gameContext } from './game';
-import { sites as data } from '@/data/sites';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
   const [score, setScore] = useState<number>(0);

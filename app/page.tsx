@@ -6,8 +6,7 @@ import { gameContext } from '@/context/game';
 import { use, useEffect } from 'react';
 
 export default function Home() {
-  const { score, sites, selectRandom, selected, alreadyAnswered } =
-    use(gameContext);
+  const { sites, selectRandom, selected } = use(gameContext);
 
   useEffect(() => {
     if (!selected) {

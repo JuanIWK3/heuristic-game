@@ -71,7 +71,7 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The order tracking option does not always provide accurate delivery status information.",
+          'The order tracking option does not always provide accurate delivery status information.',
         answer: 'visibility',
       },
       {
