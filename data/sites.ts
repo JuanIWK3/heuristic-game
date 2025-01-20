@@ -19,20 +19,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The application does not notify you when an item added to the cart is out of stock.',
+          'The official website does not provide clear information about store opening hours',
         answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The promotions layout does not display old prices for comparison with discounts.',
-        answer: 'match',
+          'The website interface is outdated and not responsive on mobile devices.',
+        answer: 'aesthetic',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The 'Back' button takes the user to the home page instead of the previous page.",
-        answer: 'userControl',
+          "The 'There is no option to purchase online or check product availability in stores.",
+        answer: 'flexibility',
       },
     ],
   },
@@ -42,20 +42,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Product categories are sometimes inconsistent with user expectations, leading to confusion.',
-        answer: 'consistency',
+          'Product categorization is not always intuitive, making navigation difficult for users.',
+        answer: 'match',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The checkout page doesn’t provide a clear way to undo or modify an order, limiting user control.',
+          'The product return process has complex and unclear steps.',
         answer: 'userControl',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Search results often show unrelated products due to lack of error prevention in filtering options.',
-        answer: 'errorPrevention',
+          'Product recommendations based on past purchases are not always relevant.',
+        answer: 'flexibility',
       },
     ],
   },
@@ -65,20 +65,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'When choosing a restaurant, the user cannot see delivery fees before adding something to the cart.',
+          'Product recommendations based on past purchases are not always relevant.',
+        answer: 'aesthetic',
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          "The order tracking option does not always provide accurate delivery status information.",
         answer: 'visibility',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The 'Cancel order' option is inaccessible after payment confirmation, even before the order is prepared",
-        answer: 'userControl',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          'Generic error messages appear when payment fails, without detailing the reason.',
-        answer: 'errorPrevention',
+          'The restaurant review interface after delivery is not intuitive, resulting in a low rate of user feedback.',
+        answer: 'recognition',
       },
     ],
   },
@@ -88,20 +88,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Privacy settings are hidden deep in the menu, making it difficult for users to recognize and change them.',
-        answer: 'recognition',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          'Friend suggestions clutter the interface, reducing aesthetic and minimalist design.',
-        answer: 'aesthetic',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          'The help center provides lengthy articles but lacks concise instructions for common issues.',
+          'Complex privacy settings make it difficult for users to control personal information.',
         answer: 'documentation',
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          'O feed de notícias apresenta atualizações não cronológicas, confundindo os usuários sobre a ordem dos posts.',
+        answer: 'consistency',
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          'Notifications about irrelevant activities increase information overload for users.',
+        answer: 'aesthetic',
       },
     ],
   },
@@ -111,20 +111,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'After pausing a video, the subtitle disappears on the pause screen.',
-        answer: 'visibility',
+          'A reprodução automática de trailers na tela inicial pode ser considerada invasiva por alguns usuários.',
+        answer: 'usercontrol',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          "The recommendations algorithm prioritizes popular content over the user's favorite genres.",
-        answer: 'consistency',
+          "Content categorization does not always accurately reflect users' genres or preferences.",
+        answer: 'match',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'Errors while streaming only show cryptic codes, making it hard for users to diagnose the problem.',
-        answer: 'help',
+          'The option to skip series introductions is not always available or visible.',
+        answer: 'flexibility',
       },
     ],
   },
@@ -134,20 +134,20 @@ export const sites: Site[] = [
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'O site não informa claramente se um medicamento está em falta até o momento do checkout.',
-        answer: 'visibility',
+          'Usuários relataram dificuldades ao tentar aplicar descontos de laboratórios durante a compra online, resultando em erros frequentes..',
+        answer: 'errorPrention',
       },
       {
         image: 'https://via.placeholder.com/150',
         description:
-          'The names of some products appear abbreviated, making it difficult to fully identify the item without clicking on it.',
-        answer: 'match',
-      },
-      {
-        image: 'https://via.placeholder.com/150',
-        description:
-          'The search functionality does not accept common typos or drug name variations.',
+          'The search functionality on the site presents inaccurate or irrelevant results for certain medications.',
         answer: 'help',
+      },
+      {
+        image: 'https://via.placeholder.com/150',
+        description:
+          'During the checkout process, mandatory information is not clearly indicated, leading to possible omissions and the need for corrections.',
+        answer: 'documentation',
       },
     ],
   },
