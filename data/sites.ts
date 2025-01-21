@@ -17,6 +17,10 @@ import amazon1 from '../assets/amazon-1.png';
 import amazon2 from '../assets/amazon-2.png';
 import amazon3 from '../assets/amazon-3.png';
 import OpenLogo from '../assets/open-logo.png';
+import open1 from '../assets/open1.png';
+import open2 from '../assets/open2.png';
+import araujo2 from '../assets/araujo-2.png';
+import araujo3 from '../assets/araujo-3.png';
 
 export type Problem = {
   image: StaticImageData;
@@ -43,7 +47,7 @@ export const sites: Site[] = [
         answer: 'visibility',
       },
       {
-        image: 'https://via.placeholder.com/150',
+        image: bh1,
         description:
           'The website interface is outdated and not responsive on mobile devices.',
         answer: 'aesthetic',
@@ -133,18 +137,18 @@ export const sites: Site[] = [
     logo: OpenLogo,
     problems: [
       {
-        image: 'https://via.placeholder.com/150',
+        image: open1,
         description: 'The page has spelling errors.',
         answer: 'consistency',
       },
       {
-        image: 'https://via.placeholder.com/150',
+        image: open2,
         description:
           'There is no clear information about the duration of classes or modules on the website.',
         answer: 'visibility',
       },
       {
-        image: 'https://via.placeholder.com/150',
+        image: open2,
         description:
           'The platform does not provide a free trial or demonstration option for classes.',
         answer: 'flexibility',
@@ -156,19 +160,19 @@ export const sites: Site[] = [
     logo: AraujoLogo,
     problems: [
       {
-        image: 'https://via.placeholder.com/150',
+        image: araujo2,
         description:
-          'Usuários relataram dificuldades ao tentar aplicar descontos de laboratórios durante a compra online, resultando em erros frequentes..',
-        answer: 'errorPrention',
+          'Users report difficulties when trying to apply laboratory discounts during online purchases, resulting in frequent errors.',
+        answer: 'errorPrevention',
       },
       {
-        image: 'https://via.placeholder.com/150',
+        image: araujo2,
         description:
           'The search functionality on the site presents inaccurate or irrelevant results for certain medications.',
         answer: 'help',
       },
       {
-        image: 'https://via.placeholder.com/150',
+        image: araujo3,
         description:
           'During the checkout process, mandatory information is not clearly indicated, leading to possible omissions and the need for corrections.',
         answer: 'documentation',
