@@ -1,26 +1,28 @@
-import type { Heuristic } from './heuristics';
-import Face1 from '../assets/face1.png';
-import Face2 from '../assets/face2.png';
-import Face3 from '../assets/face3.png';
-import FaceLogo from '../assets/face-logo.png';
-import AraujoLogo from '../assets/araujo-logo.png';
-import BhLogo from '../assets/bh-logo.png';
-import IfoodLogo from '../assets/ifood-logo.png';
-import AmazonLogo from '../assets/amazon-logo.png';
 import type { StaticImageData } from 'next/image';
-import Ifood1 from '../assets/ifood1.png';
-import Ifood2 from '../assets/ifood2.png';
-import Ifood3 from '../assets/ifood3.png';
-import bh1 from '../assets/bh1.png';
-import bh3 from '../assets/bh3.png';
 import amazon1 from '../assets/amazon-1.png';
 import amazon2 from '../assets/amazon-2.png';
 import amazon3 from '../assets/amazon-3.png';
+import AmazonLogo from '../assets/amazon-logo.png';
+import araujo2 from '../assets/araujo-2.png';
+import araujo3 from '../assets/araujo-3.png';
+import AraujoLogo from '../assets/araujo-logo.png';
+import BhLogo from '../assets/bh-logo.png';
+import bh1 from '../assets/bh1.png';
+import bh2 from '../assets/bh2.png';
+import bh3 from '../assets/bh3.png';
+import FaceLogo from '../assets/face-logo.png';
+import Face1 from '../assets/face1.png';
+import Face2 from '../assets/face2.png';
+import Face3 from '../assets/face3.png';
+import IfoodLogo from '../assets/ifood-logo.png';
+import Ifood1 from '../assets/ifood1.png';
+import Ifood2 from '../assets/ifood2.png';
+import Ifood3 from '../assets/ifood3.png';
 import OpenLogo from '../assets/open-logo.png';
 import open1 from '../assets/open1.png';
 import open2 from '../assets/open2.png';
-import araujo2 from '../assets/araujo-2.png';
-import araujo3 from '../assets/araujo-3.png';
+import open3 from '../assets/open3.png';
+import type { Heuristic } from './heuristics';
 
 export type Problem = {
   image: StaticImageData;
@@ -47,7 +49,7 @@ export const sites: Site[] = [
         answer: 'visibility',
       },
       {
-        image: bh1,
+        image: bh2,
         description:
           'The website interface is outdated and not responsive on mobile devices.',
         answer: 'aesthetic',
@@ -91,7 +93,7 @@ export const sites: Site[] = [
       {
         image: Ifood1,
         description:
-          'Product recommendations based on past purchases are not always relevant.',
+          'Excessive notifications about promotions can be intrusive for users..',
         answer: 'aesthetic',
       },
       {
@@ -121,7 +123,7 @@ export const sites: Site[] = [
       {
         image: Face2,
         description:
-          'O feed de notícias apresenta atualizações não cronológicas, confundindo os usuários sobre a ordem dos posts.',
+          'The news feed presents non-chronological updates, confusing users about the order of posts.',
         answer: 'consistency',
       },
       {
@@ -148,7 +150,7 @@ export const sites: Site[] = [
         answer: 'visibility',
       },
       {
-        image: open2,
+        image: open3,
         description:
           'The platform does not provide a free trial or demonstration option for classes.',
         answer: 'flexibility',
