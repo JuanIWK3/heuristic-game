@@ -13,7 +13,7 @@ export default function Home() {
     if (!selected && tutorialStep === 0) {
       setTimeout(() => {
         selectRandom();
-      }, 100);
+      }, 1000);
     }
   }, [selected, selectRandom, tutorialStep]);
 

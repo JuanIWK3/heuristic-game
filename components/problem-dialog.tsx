@@ -60,7 +60,7 @@ export function ProblemDialog({
   }, [open, answer, timer]);
 
   const renderContent = () => (
-    <div className="overflow-scroll">
+    <div className="overflow-auto">
       {timer > 0 && (
         <div className="text-center text-2xl">
           {timer}
@@ -68,7 +68,7 @@ export function ProblemDialog({
           seconds
         </div>
       )}
-      <div className="overflow-scroll">
+      <div className="overflow-auto">
         <DialogTitle className="mb-4">{site.name}</DialogTitle>
         <DialogDescription>{problem.description}</DialogDescription>
         <Image
@@ -121,7 +121,7 @@ export function ProblemDialog({
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger>{trigger()}</DialogTrigger>
-        <DialogContent className="overflow-scroll max-h-screen">
+        <DialogContent className="overflow-auto max-h-screen">
           <DialogHeader>{renderContent()}</DialogHeader>
         </DialogContent>
       </Dialog>
