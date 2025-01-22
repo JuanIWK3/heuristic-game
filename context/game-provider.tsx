@@ -5,7 +5,7 @@ import type { Problem, Site } from '@/data/sites';
 import { sites as data } from '@/data/sites';
 import { toast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import { gameContext } from './game';
 
 export function GameContextProvider({ children }: { children: ReactNode }) {
@@ -15,6 +15,7 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
     site: Site;
     problem: Problem;
   } | null>(null);
+  const [tutorialStep, setTutorialStep] = useState<number>(1);
   const router = useRouter();
   const [alreadyAnswered] = useState<Set<Problem>>(new Set());
 
@@ -103,6 +104,13 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
     setSelected(null);
   }
 
+  // if localStorage has a finishedTutorial key, set tutorialStep to 0
+  useEffect(() => {
+    if (localStorage.getItem('finishedTutorial')) {
+      setTutorialStep(0);
+    }
+  });
+
   return (
     <gameContext.Provider
       value={{
@@ -113,6 +121,8 @@ export function GameContextProvider({ children }: { children: ReactNode }) {
         selected,
         answer,
         alreadyAnswered: alreadyAnswered.size,
+        tutorialStep,
+        setTutorialStep,
       }}
     >
       {children}

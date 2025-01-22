@@ -15,6 +15,8 @@ type UserContext = {
   selectRandom: VoidFunction;
   answer(heuristic: Heuristic | null): void;
   alreadyAnswered: number;
+  tutorialStep: number;
+  setTutorialStep: Dispatch<SetStateAction<number>>;
 };
 
 export const gameContext = createContext<UserContext>({
@@ -31,4 +33,8 @@ export const gameContext = createContext<UserContext>({
     /* default implementation */
   },
   alreadyAnswered: 0,
+  tutorialStep: 1,
+  setTutorialStep: () => {
+    /* default implementation */
+  },
 });
